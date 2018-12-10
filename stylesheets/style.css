@@ -1,0 +1,1114 @@
+/* COLORS 
+yellow - #ffdc3a
+boxes - #454238
+text - #3e3b33
+*/
+
+/* FONT FACE */
+@font-face {
+    font-family: 'OctoberMoon';
+    src: url('../fonts/OctoberMoon.otf');
+}
+
+/* ALL */
+* {
+    padding: 0;
+    margin: 0;
+    color: #ffdc3a;
+    font-family: 'OctoberMoon';
+/*    border: 1px solid black;*/
+}
+body {
+    background-color: #35332e;
+}
+#container {
+    width: 100vw;
+    background-color: #454238;
+    overflow: hidden;
+    position: relative;
+    height: 90vh;
+}
+
+/* KEYFRAMES */
+@keyframes stirring {
+    0%, 100% {}
+    50% {
+        left: 14vw;
+        transform: rotate(15deg);
+    }
+}
+@keyframes bubblesOne {
+    0% {}
+    40% {
+        opacity: 1;
+        bottom: 27.5vw;
+    }
+    50% {
+        opacity: 0;
+        bottom: 27.5vw;
+    }
+}
+@keyframes bubblesTwo {
+    0% {}
+    40% {
+        opacity: 1;
+        bottom: 25vw;
+    }
+    50% {
+        opacity: 0;
+        bottom: 25vw;
+    }
+}
+@keyframes bubblesThree {
+    0% {}
+    40% {
+        opacity: 1;
+        bottom: 20.5vw;
+    }
+    50% {
+        opacity: 0;
+        bottom: 20.5vw;
+    }
+}
+@keyframes eyes {
+    0% {}
+    20% {top: -75%}
+    20.5% {top: -25%}
+    30% {top: -75%}
+}
+@keyframes lights {
+    0%, 100% {opacity: 0.5}
+    25% {opacity: 0.3}
+    50% {opacity: 0.5}
+    75% {opacity: 0.4}
+}
+
+/* Witch Header */
+header {
+    position: absolute;
+    z-index: 3;
+    left: 12.5vw;
+    bottom: 34vw;
+}
+header img {
+    width: 17vw;
+}
+h1 {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -55%);
+    font-size: 3vw;
+    text-align: center;
+    line-height: 0.85;
+    text-shadow: 0 0 0.75vw rgba(256,256,256, 0.35);
+}
+.small {
+    font-size: 2vw;
+}
+
+
+/* Shelf */
+main {
+    margin: auto;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60vw;
+    z-index: 2;
+}
+#shelf-label {
+    /* 3.16:1 */
+    width: 22.3vw;
+    height: 6.3vw;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -2.5vw;
+    background-image: url('../images/shelf-label-one.jpg');
+    background-size: cover;
+    z-index: 1;
+}
+h2 {
+    display: flex;
+    align-items: center;
+    font-size: 2.1vw;
+    text-shadow: 0 0.5vw rgba(0,0,0, 0.25);
+}
+#shelf-top, #shelf {
+    background-image: url(../images/wood-bg.jpg);
+    background-size: cover;
+    position: relative;
+}
+#shelf-top {
+    height: 2.5vw;
+    margin-bottom: 0.45vw;
+}
+#shelf {
+    height: 32vw;
+    display: grid;
+    width: 87.5%;
+    margin: auto;
+    grid-row-gap: 3vw;
+    grid-column-gap: 1vw;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 2.5vw;
+    box-shadow: 0 -0.5vw black;
+}
+
+/* SHELF ITEMS */
+.shelves {
+    box-shadow: 0 0.8vw rgba(0,0,0, 0.5);
+    background-color: #807860;
+    background-repeat: no-repeat;
+    background-position: 40% 105%;
+    position: relative;
+}
+.shelf-label h3 {
+    background-size: cover;
+    display: inline-block;
+    padding: 0.25vw 1.5vw;
+    font-size: 1.25vw;
+    position: relative;
+    top: -1.5vw;
+    z-index: 2;
+}
+.one {
+    /* 4.33:1 */
+    grid-column: 1 / 3;
+    background-image: url('../images/mysterious-goods.png');
+    background-size: 31.4vw 7.25vw;
+}
+.one h3 {
+    left: 0.5vw;
+}
+.one h3 {
+    background-image: url('../images/mysterious-goods-label.png');
+}
+.two {
+    /* 2.17 */
+    background-image: url('../images/potions.png');
+    background-size: 11.4vw 5.25vw;
+    background-position: 10% 100%;
+}
+.two h3 {
+    background-image: url('../images/potions-label.png');
+    left: 3vw;
+}
+#potion-web img {
+    position: absolute;
+    width: 9.25vw;
+    top: -0.2vw;
+    right: -0.2vw;
+}
+.three {
+    /* 1.27 */
+    background-image: url('../images/spices.png');
+    background-size: 7.95vw 6.25vw;
+    background-position: 92.5% 100%;
+}
+.three h3 {
+    background-image: url('../images/spices-label.png');
+    left: 6.5vw;
+}
+#spices-web img {
+    position: absolute;
+    width: 8vw;
+    bottom: -0.2vw;
+    left: -0.15vw;
+}
+.four {
+    /* 1.9:1 */
+    background-image: url('../images/mush.png');
+    background-size: 13.8vw 7.25vw;
+    background-position: 25% 110%;
+}
+.four h3 {
+    background-image: url('../images/mush-label.png');
+    padding: 0.25vw 1vw;
+    left: 1vw;
+}
+.five {
+    grid-column: 3 / 4;
+    grid-row: 2 / 4;
+    box-shadow: 0 0 0.5vw rgba(0,0,0, 0.25);
+    background-image: url('../images/secret-stash-bg.jpg');
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: center;
+    
+}
+.five h3 {
+    background-image: url('../images/secret-stash-label.png');
+    padding: 0.5vw 1.25vw;
+}
+.five>.shelf-label {
+    position: absolute;
+}
+#secret-stash {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+#key-hole img {
+    width: 1vw;
+    position: absolute;
+    right: 1vw;
+    bottom: 2vw;
+}
+#eyes, #eyes img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+#eyes {
+    background-color: black;
+    border-radius: 50%;
+    height: 9vw;
+    width: 9vw; 
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+#eye-animate {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: -75%;
+    background-color: black;
+    animation: eyes 8s infinite;
+    z-index: 4;
+}
+#eyes img {
+    width: 50%;
+    transform: translate(-50%, -50%);
+}
+.six {
+    /* 1.8:1 */
+    background-image: url('../images/slimeys.png');
+    background-size: 13.95vw 7.75vw;
+    background-position: 45% 125%;
+}
+.six h3 {
+    background-image: url('../images/slimeys-label.png');
+    left: 1.5vw;
+    padding: 0.25vw 1.25vw;
+}
+.seven > #empty > figure img {
+    position: absolute;
+}
+#empty {
+    height: 100%;
+}
+#empty-web img {
+    width: 7.75vw;
+    right: -0.1vw;
+    bottom: -0.1vw;
+}
+#note img{
+    width: 5.25vw;
+    bottom: 0;
+    left: 2vw;
+}
+h4 {
+    position: absolute;
+    color: black;
+    bottom: 0.3vw;
+    left: 3.45vw;
+    font-size: 1vw;
+}
+#spider img {
+    width: 1vw;
+    left: 1vw;
+}
+
+/* Lights */
+#lights div {
+    background-color: #ffdc3a;
+    border-radius: 50%;
+    animation: lights 8s infinite linear;
+    position: absolute;
+    z-index: 5;
+    opacity: 0.5;
+}
+#lights div:first-child {
+    width: 2vw;
+    height: 2vw;
+    bottom: 16vw;
+    left: 5vw;
+}
+#lights div:nth-child(2) {
+    width: 3.5vw;
+    height: 3.5vw;
+    bottom: 26.5vw;
+    left: 12.5vw;
+    animation-delay: 2s;
+}
+#lights div:nth-child(3) {
+    width: 2.25vw;
+    height: 2.25vw;
+    bottom: 9vw;
+    left: 19.5vw;
+    animation-delay: 3s;
+}
+#lights div:nth-child(4) {
+    width: 1.5vw;
+    height: 1.5vw;
+    bottom: 16.5vw;
+    left: 30vw;
+    animation-delay: 1s;
+}
+#lights div:nth-child(5) {
+    width: 2vw;
+    height: 2vw;
+    bottom: 38.5vw;
+    left: 36vw;
+    animation-delay: 3s;
+}
+#lights div:nth-child(6) {
+    width: 1vw;
+    height: 1vw;
+    bottom: 2vw;
+    left: 42vw;
+    animation-delay: 1s;
+}
+#lights div:nth-child(7) {
+    width: 1.5vw;
+    height: 1.5vw;
+    bottom: 30vw;
+    left: 48.5vw;
+    animation-delay: 2s;
+}
+#lights div:nth-child(8) {
+    width: 1vw;
+    height: 1vw;
+    bottom: 5vw;
+    left: 63vw;
+    animation-delay: 3s;
+}
+#lights div:nth-child(9) {
+    width: 2.5vw;
+    height: 2.5vw;
+    bottom: 10vw;
+    left: 80vw;
+    animation-delay: 1s;
+}
+#lights div:nth-child(10) {
+    width: 4.5vw;
+    height: 4.5vw;
+    bottom: 30.5vw;
+    left: 88vw;
+    animation-delay: 3s;
+}
+#lights div:nth-child(11) {
+    width: 2.25vw;
+    height: 2.25vw;
+    bottom: 17.5vw;
+    left: 95vw;
+    animation-delay: 2s;
+}
+
+/* Background */
+#background img {
+    position: absolute;
+    z-index: 3;
+}
+/* Left */
+#bg-shelf img {
+    width: 12vw;
+    z-index: 2;
+    bottom: 32.5vw;
+}
+#witch-pot img {
+    width: 20vw;
+    bottom: -2.5vw;
+    left: 0.5vw;
+}
+#stick img {
+    width: 2.5vw;
+    bottom: 15vw;
+    left: 5vw;
+    animation: stirring 5s infinite;
+}
+    /* Bubbles */
+    #bubbles div {
+        position: absolute;
+        z-index: 2;
+        bottom: 13vw;
+        background: none;
+        opacity: 0;
+    }
+    #bubbles > .one {
+        height: 1vw;
+        width: 1vw;
+        left: 10.5vw;
+        background-color: #91da42;
+        border-radius: 50%;
+        animation: bubblesOne 5s infinite;
+    }
+    #bubbles > .two {
+        height: 1.75vw;
+        width: 1.75vw;
+        left: 8vw;
+        background-color: #91da42;
+        border-radius: 50%;
+        animation: bubblesTwo 5s infinite;
+        animation-delay: 0.5s;
+    }
+    #bubbles > .three {
+        height: 3.5vw;
+        width: 3.5vw;
+        left: 10vw;
+        background-color: #91da42;
+        border-radius: 50%;
+        animation: bubblesThree 5s infinite;
+        animation-delay: 1.25s;
+    }
+/* Right */
+#window img {
+    width: 17vw;
+    right: 1vw;
+    bottom: 17vw;
+}
+#candles img {
+    width: 3.5vw;
+    bottom: -2vw;
+    right: 16vw;
+}
+#pumpkin {
+    position: absolute;
+    z-index: 3;
+    background-image: url('../images/pumpkin.png');
+    background-size: cover;
+    bottom: 0vw;
+    right: -0.5vw;
+    width: 16vw;
+    height: 13vw;
+    transition: 0.3s;
+}
+#pumpkin img {
+    width: 100%;
+}
+#pumpkin:hover{
+    background-image: url('../images/pumpkin-lightup.png');
+    transition: 0.05s;
+}
+    /* Circle */
+    #circle {
+        position: absolute;
+        width: 90vw;
+        height: 90vw;
+        background-color: #807860;
+        border-radius: 50%;
+        bottom: -40vw;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    #extend {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        top: 50%;
+        background-color: #807860;
+    }
+
+/* MEDIA QUERIES */
+
+/* BIG COMPUTER */
+@media only screen and (min-width: 1824px) { 
+    #container {
+        height: 95vh;
+    }
+    header {
+        left: 13vw;
+        bottom: 32.5vw;
+    }
+    #circle {
+        bottom: -44vw
+    }
+    
+    /* SHELF */
+    #shelf {
+        height: 31vw;
+    }
+    .one {
+        background-position: 35% 110%;
+    }
+    .four {
+        background-size: 12.6vw 7vw;
+        background-position: 35% 115%;
+    }
+    .six {
+        background-size: 13.05vw 7.25vw;
+    }
+    
+    /* BACKGROUND */
+    #bg-shelf img {
+        width: 11vw;
+        z-index: 2;
+        bottom: 30vw;
+    }
+    #window img {
+        width: 15vw;
+        bottom: 17vw;
+    }
+}
+
+/* SMALL DESKTOPS / LAPTOPS */
+@media only screen  and (max-width : 1224px) {
+    @keyframes bubblesOne {
+        0% {}
+        40% {
+            opacity: 1;
+            bottom: 35vw;
+        }
+        50% {
+            opacity: 0;
+            bottom: 35vw;
+        }
+    }
+    @keyframes bubblesTwo {
+        0% {}
+        40% {
+            opacity: 1;
+            bottom: 30vw;
+        }
+        50% {
+            opacity: 0;
+            bottom: 30vw;
+        }
+    }
+    @keyframes bubblesThree {
+        0% {}
+        40% {
+            opacity: 1;
+            bottom: 22.5vw;
+        }
+        50% {
+            opacity: 0;
+            bottom: 22.5vw;
+        }
+    }
+    
+    #container {
+        height: 140vh;
+        max-height: 97.5vw;
+        min-height: 95vw;
+    }
+    
+    /* HEADER */
+    header {
+        bottom: 69.5vw;
+        left: 5.5vw;
+    }
+    header img {
+        width: 22.5vw;
+    }
+    h1 {
+        font-size: 4vw;
+        text-align: center;
+        text-shadow: 0 0 1.25vw rgba(256,256,256, 0.35);
+    }
+    .small {
+        font-size: 2.75vw;
+    }
+    
+    /* SHELF */
+    main {
+        width: 70vw;
+    }
+    #shelf-top {
+        height: 3vw;
+    }
+    #shelf {
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 3.5vw;
+        grid-column-gap: 3vw;
+        padding: 3.5vw;
+        height: 67.5vw;
+    }
+    #shelf-label {
+        /* 3.16:1 */
+        width: 28.5vw;
+        height: 8vw;
+        top: -3.5vw;
+        z-index: 3;
+    }
+    .shelf-label h3 {
+        padding: 0.25vw 2vw;
+        top: -2.25vw;
+    }
+    h2 {
+        font-size: 2.9vw;
+    }
+    h3 {
+        font-size: 2vw !important;
+    }
+    .one {
+        background-image: url('../images/mysterious-goods-media.png');
+        background-size: 47vw 10vw;
+        background-position: 35% 110%;
+    }
+    .two {
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+        background-size: 17.4vw 8vw;
+    }
+    .two h3 {
+        padding: 0.25vw 2.25vw;
+    }
+    #potion-web img {
+        width: 12.5vw;
+        transform: rotate(-270deg);
+    }
+    .three {
+        background-size: 12.7vw 10vw;
+    }
+    #spices-web img {
+        width: 12vw;
+    }
+    .four {
+        background-size: 22vw 10vw;
+        background-position: 45% 110%;
+        background-image: url("../images/mush-media.png");
+    }
+    .five {
+        grid-column: 2 / 3;
+        grid-row: 4 / 6;
+    }
+    .five h3 {
+        padding: 0.5vw 2vw;
+    }
+    #eyes {
+        width: 12vw;
+        height: 12vw;
+    }
+    #key-hole img {
+        width: 1.5vw;
+        right: 1.5vw;
+    }
+    .six {
+        background-size: 18.9vw 10.5vw;
+    }
+    .seven {
+        grid-column: 1 / 2;
+        grid-row: 4 / 6;
+    }
+    #empty-web img {
+        transform: rotateX(180deg);
+        width: 15vw;
+        top: -0.5vw;
+        right: -0.5vw;
+    }
+    #note img {
+        width: 10vw;
+        left: 3.5vw;
+    }
+    #spider img {
+        width: 2vw;
+        left: 1.5vw;
+    }
+    h4 {
+        font-size: 1.75vw;
+        left: 6.6vw;
+        bottom: 0.7vw;
+    }
+    
+    /* LIGHTS */
+    #lights div:nth-child(12) {
+        width: 2.5vw;
+        height: 2.5vw;
+        bottom: 50vw;
+        left: 10vw;
+        animation-delay: 1s;
+    }
+    #lights div:nth-child(13) {
+        width: 3.25vw;
+        height: 3.25vw;
+        bottom: 62.5vw;
+        left: 60.5vw;
+    }
+    #lights div:nth-child(14) {
+        width: 1.5vw;
+        height: 1.5vw;
+        bottom: 72.5vw;
+        left: 45vw;
+        animation-delay: 2s;
+    }
+    #lights div:nth-child(15) {
+        width: 2vw;
+        height: 2vw;
+        bottom: 45vw;
+        left: 75vw;
+        animation-delay: 3s;
+    }
+    
+    /* BACKGROUND */
+    #circle {
+        bottom: 12.5vw;
+        width: 80vw;
+        height: 80vw;
+    }
+    #bg-shelf img {
+        bottom: 47.5vw;
+        left: -2.5vw;
+        width: 14vw;
+    }
+    #window img {
+        bottom: 25vw;
+        right: -5vw;
+    }
+    #pumpkin {
+        width: 17vw;
+    }
+    #candles {
+        display: none;
+    }
+    #pot {
+        position: absolute;
+        bottom: -2vw;
+        left: -5vw;
+    }
+    #witch-pot img {
+
+    }
+    footer {
+        height: 5vh;
+        width: 100%;
+        background-color: #35332e;
+    }
+}
+
+/* iPads */
+@media only screen and (max-device-width: 736px)  {
+      
+    #container {
+        height: 300vh;
+        max-height: 325vw;
+        min-height: 300vw;
+    }
+      
+    /* HEADER */
+      @keyframes float {
+          0%, 100% {
+              bottom: 275vw;
+          }
+          50% {
+              bottom: 271vw;
+          }
+      }
+      header {
+          bottom: 273vw;
+          left: 50%;
+          transform: translateX(-50%);
+          animation: float 5s infinite;
+          z-index: 4 !important;
+      }
+      header img {
+          width: 480px; 
+      }
+    @keyframes floatGlow {
+          0%, 100% {
+              bottom: 283vw;
+              box-shadow: 0 0 250px rgba(145, 218, 66, 1);
+          }
+          50% {
+              bottom: 279vw;
+              box-shadow: 0 0 200px rgba(145, 218, 66, 1);
+          }
+      }
+    #green-glow {
+        width: 250px;
+        height: 250px;
+        background-color: #91da42;
+        position: absolute;
+        border-radius: 50%;
+        box-shadow: 0 0 250px rgba(145, 218, 66, 1);
+        bottom: 281vw;
+      left: 50%;
+        background: radial-gradient(#91da42, rgba(145, 218, 66, 0.1));
+      transform: translateX(-50%);
+      animation: floatGlow 5s infinite;
+      z-index: 3;
+    }
+      h1 {
+          font-size: 80px;
+          text-shadow: 0 0 15px rgba(256,256,256, 0.4);
+          z-index: 4 !important;
+      }
+      .small {
+          font-size: 54px;
+      }
+    
+    /* SHELVES */
+    main {
+        width: 90vw;
+    }
+    #shelf-top {
+        height: 75px;
+          margin-bottom: 12px;
+    }
+    #shelf {
+        grid-template-columns: repeat(1, 1fr);
+        grid-row-gap: 50px;
+        grid-column-gap: 2vw;
+        grid-auto-rows: 35vw;
+        padding: 90px 60px 60px 60px;
+        height: auto;
+        width: 85%;
+        box-shadow: 0 -12px 0 black;
+    }
+      #shelf div {
+          grid-column: 1 / 2;
+      }
+      #shelf-label {
+          width: 580px;
+          height: 164px;
+          top: -55px;
+      }
+      h2 {
+          font-size: 62px;
+      }
+      .shelf-label h3 {
+          font-size: 42px !important;
+          top: -50px;
+          padding: 10px 50px;
+      }
+      .one {
+          /* 2.76:1 */
+          background-image: url('../images/mysterious-goods-mobile.png');
+          background-size: 662.4px 240px;
+          background-position: 40% 105%;
+      }
+    .two {
+        grid-column: 1 / 2;
+        grid-row: 4 / 5;
+        background-size: 434px 200px;
+    }
+    .two h3 {
+        padding: 10px 55px;
+    }
+      #potion-web img {
+          width: 375px;
+          transform: none;
+          top: -15px;
+          right: -15px;
+      }
+      .three {
+          background-size: 317.5px 250px;
+          grid-row: 2 / 3;
+      }
+      .three h3 {
+          left: 30vw;
+      }
+      #spices-web img {
+          width: 320px;
+          bottom: -10px;
+          left: -10px;
+      }
+      .four {
+          display: none;
+      }
+    .five {
+        grid-row: 5 / 7;
+        padding: 15px 40px;
+    }
+      #eyes {
+          width: 300px;
+          height: 300px;
+      }
+      #key-hole img {
+          width: 35px;
+          bottom: 20vw;
+      }
+      .six {
+          background-size: 495px 275px;
+          background-position: 45% 100%;
+      }
+      .six h3 {
+          left: 45vw;
+      }
+    .seven {
+          display: none;
+    }
+      
+    /* LIGHTS */
+    #lights div:first-child {
+        width: 25px;
+        height: 25px;
+        bottom: 7.5vw;
+        left: 5vw;
+    }
+    #lights div:nth-child(2) {
+        width: 50px;
+        height: 50px;
+        bottom: 50vw;
+        left: 65vw;
+    }
+    #lights div:nth-child(3) {
+        width: 50px;
+        height: 50px;
+        bottom: 225vw;
+        left: 25vw;
+    }
+    #lights div:nth-child(4) {
+        width: 75px;
+        height: 75px;
+        bottom: 200vw;
+        left: 75vw;
+    }
+    #lights div:nth-child(5) {
+        width: 50px;
+        height: 50px;
+        bottom: 90vw;
+        left: 42.5vw;
+    }
+    #lights div:nth-child(6) {
+        width: 75px;
+        height: 75px;
+        bottom: 120vw;
+        left: 80vw;
+    }
+    #lights div:nth-child(7) {
+        width: 25px;
+        height: 25px;
+        bottom: 130vw;
+        left: 23vw;
+    }
+    #lights div:nth-child(8) {
+        width: 45px;
+        height: 45px;
+        bottom: 20vw;
+        left: 40vw;
+    }
+    #lights div:nth-child(9) {
+        width: 60px;
+        height: 60px;
+        bottom: 180vw;
+        left: 10vw;
+    }
+    #lights div:nth-child(10) {
+        width: 40px;
+        height: 40px;
+        bottom: 2.5vw;
+        left: 70vw;
+    }
+    #lights div:nth-child(10) {
+        width: 25px;
+        height: 25px;
+        bottom: 10vw;
+        left: 50vw;
+    }
+    
+    /* BACKGROUND */
+    #circle {
+        width: 95vw;
+        height: 95vw;
+          bottom: 225vw;
+      }
+      #extend {
+          height: 300vw;
+      }
+      #bg-shelf img {
+          display: none
+      }
+      #window img {
+          display: none;
+      }
+      #pumpkin {
+          width: 275px;
+          bottom: -25px;
+          right: 10px;
+          height: 275px;
+      }
+      #pot {
+          left: 5px;
+      }
+      /* WITCH POT */
+          @keyframes stirring {
+                0%, 100% {}
+                50% {
+                    left: 200px;
+                    transform: rotate(15deg);
+                }
+            }
+            @keyframes bubblesOne {
+                0% {}
+                40% {
+                    opacity: 1;
+                    bottom: 500px;
+                }
+                50% {
+                    opacity: 0;
+                    bottom: 500px;
+                }
+            }
+            @keyframes bubblesTwo {
+                0% {}
+                40% {
+                    opacity: 1;
+                    bottom: 450px;
+                }
+                50% {
+                    opacity: 0;
+                    bottom: 450px;
+                }
+            }
+            @keyframes bubblesThree {
+                0% {}
+                40% {
+                    opacity: 1;
+                    bottom: 350px;
+                }
+                50% {
+                    opacity: 0;
+                    bottom: 350px;
+                }
+            }
+          #witch-pot img {
+              width: 300px;
+          }
+          #stick img {
+                width: 50px;
+              left: 60px;
+              bottom: 175px;
+          }
+          #bubbles div {
+                bottom: 200px;
+                background: none;
+                opacity: 0;
+            }
+            #bubbles > .one {
+                height: 20px;
+                width: 20px;
+                left: 175px;
+                background-color: #91da42;
+                border-radius: 50%;
+                animation: bubblesOne 5s infinite;
+            }
+            #bubbles > .two {
+                height: 35px;
+                width: 35px;
+                left: 125px;
+                background-color: #91da42;
+                border-radius: 50%;
+                animation: bubblesTwo 5s infinite;
+                animation-delay: 0.5s;
+            }
+            #bubbles > .three {
+                height: 70px;
+                width: 70px;
+                left: 150px;
+                background-color: #91da42;
+                border-radius: 50%;
+                animation: bubblesThree 5s infinite;
+                animation-delay: 1.25s;
+            }
+    footer {
+        height: 5vh;
+        width: 100%;
+        background-color: #35332e;
+    }
+}
